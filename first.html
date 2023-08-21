@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  #textbox {
+    margin-right: 10px;
+  }
+
+  #addButton {
+    margin-left: 10px;
+  }
+
+  #output {
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<input type="text" id="textbox" placeholder="Enter text">
+<button id="addButton">Add</button>
+<div id="output"></div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const addButton = document.getElementById("addButton");
+  const outputDiv = document.getElementById("output");
+
+  addButton.addEventListener("click", function() {
+    const textbox = document.getElementById("textbox");
+    const text = textbox.value.trim();
+
+    if (text !== "") {
+      const pTag = document.createElement("p");
+      pTag.textContent = text;
+      outputDiv.appendChild(pTag);
+      textbox.value = ""; // Clear the textbox
+    }
+  });
+});
+</script>
+
+</body>
+</html>
